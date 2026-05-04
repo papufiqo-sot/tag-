@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientiae Naturalis — Strategic Knowledge Systems</title>
+<meta name="description" content="Scientiae Naturalis GmbH — A Berlin-based scientific and strategic consultancy delivering knowledge systems across health, food, environment, and education sectors.">
+
+<!-- Font: lightweight & fast -->
+<link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap)" rel="stylesheet">
+
+<style>
+/* ==== RESET ==== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ==== COLOR PALETTE ==== */
+/* Derived from uploaded palette */
+:root{
+  --deep-indigo:#2e236b;
+  --crimson:#c8102e;
+  --orange:#f76900;
+  --gray:#8a8c8f;
+  --rose:#b31252;
+  --white:#ffffff;
+  --offwhite:#f9f9f9;
+  --ink:#1e1e1e;
+}
+
+/* ==== GENERAL ==== */
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--offwhite);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:17px;
+  overflow-x:hidden;
+}
+a{color:var(--crimson);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ==== HEADER ==== */
+header{
+  position:fixed;top:0;left:0;right:0;
+  background:var(--white);
+  border-bottom:1px solid var(--gray);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.75rem 1.5rem;
+  z-index:100;
+}
+.logo{
+  font-weight:600;
+  color:var(--deep-indigo);
+  letter-spacing:0.05em;
+}
+nav{
+  display:flex;gap:1.5rem;
+}
+nav a{
+  color:var(--deep-indigo);
+  font-weight:500;
+  font-size:0.85rem;
+  text-transform:uppercase;
+}
+nav a:hover{color:var(--orange)}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+}
+.hamburger span{width:22px;height:2px;background:var(--deep-indigo);}
+@media(max-width:768px){
+  nav{display:none;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:var(--white);gap:1.25rem;padding:2.5rem 0}
+  nav.open{display:flex}
+  .hamburger{display:flex}
+}
+
+/* ==== HERO ==== */
+.hero{
+  background:linear-gradient(135deg,var(--deep-indigo),var(--crimson));
+  color:var(--white);
+  text-align:center;
+  padding:8rem 1.5rem 6rem;
+  margin-top:64px;
+}
+.hero h1{
+  font-size:clamp(2.2rem,6vw,3.5rem);
+  margin-bottom:1rem;
+  font-weight:600;
+}
+.hero p{max-width:680px;margin:0 auto;font-weight:300;font-size:1.05rem}
+
+/* ==== SECTIONS ==== */
+section{padding:4rem 1.5rem;max-width:1100px;margin:0 auto}
+section h2{
+  font-size:1.8rem;
+  color:var(--deep-indigo);
+  margin-bottom:1.25rem;
+  border-left:4px solid var(--orange);
+  padding-left:0.6rem;
+}
+
+/* ==== ABOUT ==== */
+.about p{
+  margin-bottom:1rem;
+  font-weight:300;
+  color:var(--ink);
+}
+
+/* ==== TEAM ==== */
+.team{
+  background:var(--white);
+  border:1px solid var(--gray);
+  border-radius:4px;
+  padding:2rem;
+}
+.team ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1rem}
+.team li{
+  background:var(--offwhite);
+  border:1px solid var(--gray);
+  padding:1rem;
+  border-radius:6px;
+  transition:transform .2s,background .2s;
+}
+.team li:hover{background:var(--orange);color:var(--white);transform:translateY(-4px)}
+.team li a{display:block;color:inherit;font-weight:600;margin-top:0.25rem;font-size:0.9rem}
+.team li span{display:block;font-size:0.8rem;color:var(--gray)}
+
+/* ==== SERVICES ==== */
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;
+}
+.service{
+  background:var(--white);
+  border:1px solid var(--gray);
+  padding:1.25rem;
+  border-radius:4px;
+  transition:background .25s;
+}
+.service:hover{background:var(--offwhite)}
+.service h3{
+  color:var(--crimson);
+  font-size:1.1rem;
+  margin-bottom:0.6rem;
+}
+.service p{font-size:0.95rem;color:var(--ink)}
+
+/* ==== FOOTER ==== */
+footer{
+  background:var(--deep-indigo);
+  color:var(--white);
+  padding:3rem 1.5rem;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2rem;
+  max-width:1100px;margin:0 auto;
+}
+footer h4{
+  color:var(--orange);
+  font-size:1rem;
+  margin-bottom:0.75rem;
+}
+footer a{color:var(--orange)}
+.footer-bottom{
+  text-align:center;
+  font-size:0.8rem;
+  color:var(--gray);
+  margin-top:2rem;
+}
+
+/* ==== SITE MAP ==== */
+.sitemap ul{list-style:none;padding:0}
+.sitemap ul li{margin:0.3rem 0}
+.sitemap ul li a{color:var(--white);font-size:0.9rem}
+.sitemap ul li a:hover{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Scientiae Naturalis</div>
+  <nav id="nav-menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
+</header>
+
+<section class="hero">
+  <h1>High-Stakes Scientific Insight</h1>
+  <p>Scientiae Naturalis transforms scientific knowledge into decision-grade intelligence across health, agri-food, environment, and education systems.</p>
+</section>
+
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>We are a Berlin-based scientific consultancy dedicated to bridging research, policy, and technology. Our teams specialise in delivering data-driven insights and complex decision systems for public and private sectors worldwide.</p>
+  <p>From high-level strategy to detailed implementation, we unite domain experts across natural sciences, engineering, environmental management, and education reform.</p>
+</section>
+
+<section id="services">
+  <h2>Core Services</h2>
+  <div class="services-grid">
+    <div class="service">
+      <h3>Scientific R&D and Data Systems</h3>
+      <p>Custom research, simulation, and analytics infrastructures enabling frontier scientific innovation.</p>
+    </div>
+    <div class="service">
+      <h3>Environmental Intelligence</h3>
+      <p>Climate data integration, biodiversity monitoring, ESG evaluation, and resource management systems.</p>
+    </div>
+    <div class="service">
+      <h3>Education Transformation</h3>
+      <p>Digital education design, inclusive frameworks, and institutional capacity-building solutions.</p>
+    </div>
+    <div class="service">
+      <h3>Health Innovation Strategy</h3>
+      <p>Applied epidemiology, regulatory foresight, and digital health architecture for global programmes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="team">
+  <h2>Meet the Team</h2>
+  <ul>
+    <li><strong>Dr. Lena Fischer</strong><span>Chief Scientific Officer</span><a href="[lenafischer.example.org](https://lenafischer.example.org)" target="_blank">Website</a></li>
+    <li><strong>Markus Engel</strong><span>Head of Data Systems</span><a href="[markusengel.example.org](https://markusengel.example.org)" target="_blank">Website</a></li>
+    <li><strong>Dr. Sofia Alvarez</strong><span>Director of Environmental Analytics</span><a href="[sofiaalvarez.example.org](https://sofiaalvarez.example.org)" target="_blank">Website</a></li>
+    <li><strong>Nadia Karim</strong><span>Public Policy Lead</span><a href="[nadiakarim.example.org](https://nadiakarim.example.org)" target="_blank">Website</a></li>
+    <li><strong>Prof. Jonas Meyer</strong><span>Education Systems Architect</span><a href="[jonasmeyer.example.org](https://jonasmeyer.example.org)" target="_blank">Website</a></li>
+    <li><strong>Elena Rossi</strong><span>Programme Implementation Director</span><a href="[elenarossi.example.org](https://elenarossi.example.org)" target="_blank">Website</a></li>
+  </ul>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h4>Contact</h4>
+      <p>Scientiae Naturalis GmbH<br>Berlin, Germany</p>
+      <p>Email: <a href="mailto:procurement@scientiae-naturalis.org">procurement@scientiae-naturalis.org</a></p>
+    </div>
+    <div>
+      <h4>Site Map</h4>
+      <div class="sitemap">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <p>NACE 72.10 — R&D Natural Sciences<br>VAT DE123456789</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © Scientiae Naturalis 2026 — High-Stakes Knowledge Arbitrage
+  </div>
+</footer>
+
+<script>
+// Simple mobile menu toggle
+document.getElementById('menu-btn').addEventListener('click',()=>{
+  document.getElementById('nav-menu').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
