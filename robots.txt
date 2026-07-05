@@ -1,0 +1,10 @@
+# Allow all standard web crawlers to access the site layout
+User-agent: *
+Allow: /
+
+# Block scraping bots known for high-volume content hoarding if needed
+# User-agent: BadBotName
+# Disallow: /
+
+# Reference your generated sitemap
+Sitemap: https://scientiae-naturalis.org/sitemap.xml
